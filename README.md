@@ -1,26 +1,25 @@
+# Why the fork?
+* Jquery is the devil.  BS5 dumped jquery for a reason.  But I want a bootstra
+treeview.  So I forked this repo to play with the code.  That doesn't mean I'll
+use it, maintain it, or care.
+
 > ⚠️ **Please note that this repository is no longer actively developed. As an alternative we recommend: [quercus.js](https://github.com/stefaneichert/quercus.js) which works fine with bootstrap 5 and has no dependencies. You can see a live demo [here](https://stefaneichert.github.io/quercus.js/).**
 
 ---
 
 # Bootstrap 5 Tree View
-
-
 this is a fork of https://github.com/chniter/bstreeview.
 For use with bootstrap 5 the attributes have been changed from data-target and data-toggle to the new data-bs-target and data-bs-toogle syntax.
 
 A very simple plugin to build a basic and elegant Treeview with boostrap 5.
 
-
-
 ## Dependencies
-
 Where provided these are the actual versions bootstrap-treeview has been tested against.
 
 - [Bootstrap v5)](http://getbootstrap.com/)
 - [jQuery v3.4.1 (>= 1.9.0)](http://jquery.com/)
 
 ### Usage
-
 Add the following resources for the bootstrap-treeview to function correctly.
 
 ```html

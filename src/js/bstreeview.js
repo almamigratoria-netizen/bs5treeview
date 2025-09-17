@@ -8,6 +8,61 @@
  * Project: https://github.com/chniter/bstreeview
  * Project: https://github.com/nhmvienna/bs5treeview (bootstrap 5)
  */
+
+// Code coped from Google AI about extending bootstrap
+// Query was: "write a bootstrap 5 plugin"
+(function () {
+    'use strict';
+
+    class FadeOutPlugin {
+        constructor(element) {
+            this._element = element;
+            this._config = this._getConfig(element);
+        }
+
+        // Static method to get the plugin instance
+        static getOrCreateInstance(element) {
+            return new FadeOutPlugin(element);
+        }
+
+        // Private method to get configuration from data attributes
+        _getConfig(element) {
+            const config = {};
+            // You can add more data attributes here if needed, 
+            // e.g., data-bs-duration
+            config.target = element.getAttribute('data-bs-target');
+            return config;
+        }
+
+        // Public method to trigger the fade out
+        fadeOut() {
+            const targetElement = document.querySelector(this._config.target);
+            if (targetElement) {
+                targetElement.classList.add('fade-out');
+                // Optionally remove t]he element after the transition
+                targetElement.addEventListener('transitionend', () => {
+                    targetElement.style.display = 'none';
+                }, { once: true });
+            }
+        }
+    }
+
+    // Initialize the plugin when a button with 
+    // data-bs-toggle="fadeout-plugin" is clicked
+    document.addEventListener('click', event => {
+        const target = event.target;
+        if (target.matches('[data-bs-toggle="fadeout-plugin"]')) {
+            const plugin = FadeOutPlugin.getOrCreateInstance(target);
+            plugin.fadeOut();
+        }
+    });
+
+    // Optionally, expose the plugin globally for programmatic use
+    window.FadeOutPlugin = FadeOutPlugin;
+
+})();
+// ================ end copy/paste from Google AI response to =========
+// ===============         "write a bootstrap 5 plugin" =================
 ; (function ($, window, document, undefined) {
     "use strict";
     /**
@@ -41,7 +96,8 @@
     function bstreeView(element, options) {
         this.element = element;
         this.itemIdPrefix = element.id + "-item-";
-        this.settings = $.extend({}, defaults, options);
+        // this.settings = $.extend({}, defaults, options);
+        this.settings = {...defaults, ..options}
         this.init();
     }
     /**

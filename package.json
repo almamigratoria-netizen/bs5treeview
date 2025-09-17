@@ -1,7 +1,7 @@
 {
   "name": "bstreeview",
   "version": "1.2.0",
-  "description": "Bootstrap 4 simple treeview.",
+  "description": "Bootstrap 5 simple treeview.",
   "main": "[\"./dist/css/bstreeview.min.css\",\"./dist/js/bstreeview.min.js\"]",
   "dependencies": {},
   "devDependencies": {},
@@ -23,14 +23,12 @@
     "\"tree-view\"",
     "\"navigation\"",
     "\"list-item\"",
-    "\"javascript\"",
-    "\"jquery\"",
-    "\"jquery-plugin\"]"
+    "\"javascript\""]
   ],
   "author": {
     "name": "Sami CHNITER"
   },
-  "license": "Apache-2.0",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/chniter/bstreeview/issues"
   },
